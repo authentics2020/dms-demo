@@ -1,0 +1,28 @@
+.dropoffTable {
+  th {
+    background-color: #3f51b5;
+    color: #fff;
+  }
+  tr {
+    &:nth-child(odd) {
+      background: rgb(255, 255, 255) !important;
+    }
+    &:nth-child(even) {
+      background: #f4f7fc !important;
+    }
+  }
+  td {
+    a {
+      color: #000;
+      background-color: #3f51b5;
+      color: #fff;
+      padding: 7px 15px;
+      border-radius: 4px;
+
+      &:hover {
+        text-decoration: none;
+        box-shadow: 3px 3px 10px #ccc;
+      }
+    }
+  }
+}

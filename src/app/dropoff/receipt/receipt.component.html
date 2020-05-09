@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <div class="row invoice-section">
+    <div class="col my-5">
+      <div class="flex-col dashed-border m-auto">
+        <div class="inner-container flex-col">
+          <div class="title flex-row center">
+            <h2>Receipt</h2>
+          </div>
+          <table class="m-auto">
+            <thead>
+              <tr class="row-heading">
+                <th class="item-desc">Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row-data">
+                <td class="item-desc">Item 1</td>
+                <td class="item-price">RM 2000</td>
+                <td class="item-quantity">200</td>
+                <td class="item-total">RM 400000</td>
+              </tr>
+              <tr class="row-data">
+                <td class="item-desc">Item 2</td>
+                <td class="item-price">RM 100</td>
+                <td class="item-quantity">1000</td>
+                <td class="item-total">RM 100000</td>
+              </tr>
+              <tr class="row-data">
+                <td class="item-desc">Item 3</td>
+                <td class="item-price">RM 5000</td>
+                <td class="item-quantity">200</td>
+                <td class="item-total">RM 1000000</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <th>Grand Total:</th>
+                <td class="total">RM 1000000</td>
+              </tr>
+            </tfoot>
+          </table>
+
+          <div class="row my-4">
+            <div class="col-md-4 offset-md-2">
+              <button
+                mat-raised-button
+                color="primary"
+                class="w-100"
+                routerLink=""
+              >
+                Resend Receipt
+              </button>
+            </div>
+
+            <div class="col-md-4">
+              <button
+                mat-raised-button
+                color="primary"
+                class="w-100"
+                routerLink=""
+              >
+                Print Receipt
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

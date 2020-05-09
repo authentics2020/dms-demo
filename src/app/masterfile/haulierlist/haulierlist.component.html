@@ -1,0 +1,164 @@
+<div class="container-fluid my-3">
+  <div class="row">
+    <div class="col">
+      <div class="py-2">
+        <button
+          mat-raised-button
+          color="primary"
+          class=""
+          routerLink="/masterfile"
+        >
+          Back
+        </button>
+      </div>
+      <div class="pt-3 px-4 bg-white">
+        <div class="row">
+          <div class="col-lg-2 col-sm-4">
+            <div class="form-group">
+              <mat-form-field class="w-100">
+                <mat-label>Haulier Code</mat-label>
+                <input
+                  matInput
+                  (keyup)="applyFilter($event, 'haulierCode')"
+                  placeholder=""
+                  value=""
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-sm-4">
+            <div class="form-group">
+              <mat-form-field class="w-100">
+                <mat-label>Haulier Name</mat-label>
+                <input
+                  matInput
+                  (keyup)="applyFilter($event, 'haulierName')"
+                  placeholder=""
+                  value=""
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-sm-4">
+            <div class="form-group">
+              <mat-form-field class="w-100">
+                <mat-label>DGC Billing Type</mat-label>
+                <input
+                  matInput
+                  (keyup)="applyFilter($event, 'dgcBillingType')"
+                  placeholder=""
+                  value=""
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-sm-4">
+            <div class="form-group">
+              <mat-form-field class="w-100">
+                <mat-label>Credit Limit</mat-label>
+                <input
+                  matInput
+                  (keyup)="applyFilter($event, 'creditLimit')"
+                  placeholder=""
+                  value=""
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-sm-4">
+            <div class="form-group">
+              <mat-form-field class="w-100">
+                <mat-label>Status</mat-label>
+                <input
+                  matInput
+                  (keyup)="applyFilter($event, 'status')"
+                  placeholder=""
+                  value=""
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-sm-4 text-right">
+            <button mat-raised-button color="primary" routerLink="/addhaulier">
+              Add Haulier
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <table
+        mat-table
+        [dataSource]="table_data.data"
+        class="mat-elevation-z8 w-100 dropoffTable"
+      >
+
+        <!-- hauliercode Column -->
+        <ng-container matColumnDef="sno">
+          <th mat-header-cell *matHeaderCellDef>S.No</th>
+          <td mat-cell *matCellDef="let element; let i = index">{{((length*(page-1))+i)+1}}</td>
+        </ng-container>
+        <!-- hauliercode Column -->
+        <ng-container matColumnDef="hauliercode">
+          <th mat-header-cell *matHeaderCellDef>Haulier Code.</th>
+          <td mat-cell *matCellDef="let element">{{ element.haulierCode }}</td>
+        </ng-container>
+
+        <!-- hauliername Column -->
+        <ng-container matColumnDef="hauliername">
+          <th mat-header-cell *matHeaderCellDef>Haulier Name</th>
+          <td mat-cell *matCellDef="let element">{{ element.haulierName }}</td>
+        </ng-container>
+
+        <!-- DGC Billing Type Column -->
+        <ng-container matColumnDef="dcgbillingtype">
+          <th mat-header-cell *matHeaderCellDef>DGC Billing Type</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.dgcBillingType }}
+          </td>
+        </ng-container>
+
+        <!-- creditlimit Column -->
+        <ng-container matColumnDef="creditlimit">
+          <th mat-header-cell *matHeaderCellDef>Credit Limit</th>
+          <td mat-cell *matCellDef="let element">{{ element.creditLimit }}</td>
+        </ng-container>
+
+        <!-- status Column -->
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Status</th>
+          <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <div class="text-right col-12 my-3">
+        <div class="ml-auto">
+          <ul class="nav nav-pills justify-content-end">
+            <li class="nav-item" *ngFor="let p of pages">
+              <a
+                class="nav-link cursor-pointer"
+                (click)="setpage(p)"
+                [ngClass]="{ active: p == page }"
+              >
+                {{ p }}</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="overlay-loader" [hidden]="!spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+</div>

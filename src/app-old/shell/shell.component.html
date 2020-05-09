@@ -1,0 +1,185 @@
+<div fxFlex>
+  <mat-sidenav-container fxFill>
+    <mat-sidenav
+      #sidenav
+      [mode]="isMobile ? 'over' : 'side'"
+      [opened]="!isMobile"
+      [disableClose]="!isMobile"
+      ngClass.gt-sm="has-border"
+    >
+      <mat-toolbar color="primary">
+        <span translate>APP_NAME</span>
+        <div fxFlex></div>
+        <div>
+          <button mat-icon-button [matMenuTriggerFor]="userMenu" translate>
+            <mat-icon>person</mat-icon>
+          </button>
+          <mat-menu #userMenu="matMenu">
+            <mat-list>
+              <mat-list-item>
+                <span translate>Logged in as</span>&nbsp;<b>{{ username }}</b>
+              </mat-list-item>
+              <mat-divider></mat-divider>
+            </mat-list>
+            <button mat-menu-item (click)="logout()" translate>Logout</button>
+          </mat-menu>
+        </div>
+        <!-- <app-language-selector icon="true"></app-language-selector> -->
+      </mat-toolbar>
+      <nav>
+        <mat-list>
+          <mat-divider></mat-divider>
+          <a
+            mat-list-item
+            routerLink="/home"
+            routerLinkActive="active"
+            (click)="isMobile && sidenav.close()"
+          >
+            <span translate
+              ><img
+                src="../../assets/dashboard.png"
+                class="img-fluid nav-icon"
+              /><span class="d-inline-block pt-2 pl-2 position-absolute"
+                >M&R Dashboard</span
+              ></span
+            >
+          </a>
+          <mat-divider></mat-divider>
+          <a
+            mat-list-item
+            routerLink=""
+            routerLinkActive="active"
+            (click)="isMobile && sidenav.close()"
+          >
+            <span translate
+              ><img
+                src="../../assets/operations.png"
+                class="img-fluid nav-icon"
+              /><span class="d-inline-block pt-2 pl-2 position-absolute"
+                >Operations</span
+              ></span
+            >
+          </a>
+          <mat-divider></mat-divider>
+
+          <a
+            mat-list-item
+            routerLink="/masterfile"
+            routerLinkActive="active"
+            (click)="isMobile && sidenav.close()"
+          >
+            <span translate
+              ><img
+                src="../../assets/masterfile-ops.png"
+                class="img-fluid nav-icon"
+              /><span class="d-inline-block pt-2 pl-2 position-absolute"
+                >Master File Operations</span
+              ></span
+            >
+          </a>
+          <mat-divider></mat-divider>
+
+          <a
+            mat-list-item
+            routerLink=""
+            routerLinkActive="active"
+            (click)="isMobile && sidenav.close()"
+          >
+            <span translate
+              ><img
+                src="../../assets/masterfile.png"
+                class="img-fluid nav-icon"
+              /><span class="d-inline-block pt-2 pl-2 position-absolute"
+                >M&R Master File</span
+              ></span
+            >
+          </a>
+          <mat-divider></mat-divider>
+
+          <a
+            mat-list-item
+            routerLink=""
+            routerLinkActive="active"
+            (click)="isMobile && sidenav.close()"
+          >
+            <span translate
+              ><img
+                src="../../assets/tarrif.png"
+                class="img-fluid nav-icon"
+              /><span class="d-inline-block pt-2 pl-2 position-absolute"
+                >M&R Tarrif</span
+              ></span
+            >
+          </a>
+          <mat-divider></mat-divider>
+
+          <a
+            mat-list-item
+            routerLink=""
+            routerLinkActive="active"
+            (click)="isMobile && sidenav.close()"
+          >
+            <span translate
+              ><img
+                src="../../assets/inquiry.png"
+                class="img-fluid nav-icon"
+              /><span class="d-inline-block pt-2 pl-2 position-absolute"
+                >Inquiry</span
+              ></span
+            >
+          </a>
+          <mat-divider></mat-divider>
+
+          <a
+            mat-list-item
+            routerLink="/settings"
+            routerLinkActive="active"
+            (click)="isMobile && sidenav.close()"
+          >
+            <span translate
+              ><img
+                src="../../assets/settings.png"
+                class="img-fluid nav-icon"
+              /><span class="d-inline-block pt-2 pl-2 position-absolute"
+                >Settings</span
+              ></span
+            >
+          </a>
+          <mat-divider></mat-divider>
+
+          <a
+            mat-list-item
+            routerLink="/forgotpassword"
+            routerLinkActive="active"
+            (click)="isMobile && sidenav.close()"
+          >
+            <span translate
+              ><img
+                src="../../assets/password.png"
+                class="img-fluid nav-icon"
+              /><span class="d-inline-block pt-2 pl-2 position-absolute"
+                >Change Password</span
+              ></span
+            >
+          </a>
+
+          <mat-divider></mat-divider>
+        </mat-list>
+      </nav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary" class="mat-elevation-z6">
+        <button
+          class="menu-button"
+          mat-icon-button
+          (click)="sidenav.toggle()"
+          fxHide.gt-sm
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span class="text-uppercase">{{ title }}</span>
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

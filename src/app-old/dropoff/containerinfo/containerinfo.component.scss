@@ -1,0 +1,17 @@
+.custom-file {
+  margin: 15px 0;
+  &-input {
+    height: 60px !important;
+    line-height: 45px !important;
+  }
+
+  &-label {
+    height: 60px !important;
+    line-height: 45px !important;
+
+    &:after {
+      height: 58px !important;
+      line-height: 45px !important;
+    }
+  }
+}

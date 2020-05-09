@@ -1,0 +1,351 @@
+<div class="container-fluid my-3">
+  <div class="row">
+    <div class="col-12">
+      <mat-horizontal-stepper #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>General</ng-template>
+            <div class="row">
+              <div class="col-md-6 col-lg-4 my-3">
+                <mat-form-field class="w-100">
+                  <mat-label>Customer Code</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter Customer Code"
+                    formControlName="customerCode"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-4 my-3">
+                <mat-form-field class="w-100">
+                  <mat-label>Customer Name</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter Customer Name"
+                    formControlName="customerName"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-4 my-3">
+                <mat-form-field class="w-100">
+                  <mat-label>Email Address</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter Email Address"
+                    formControlName="emailAddress"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-4 my-3">
+                <mat-form-field class="w-100">
+                  <mat-label>Customer ROC No</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter Customer ROC No"
+                    formControlName="customerRocNo"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-4 my-3">
+                <mat-form-field class="w-100">
+                  <mat-label>Address Line 1</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter Address Line 1"
+                    formControlName="addressLine1"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-4 my-3">
+                <mat-form-field class="w-100">
+                  <mat-label>Address Line 2</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter Address Line 2"
+                    formControlName="addressLine2"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-4 my-3">
+                <mat-form-field class="w-100">
+                  <mat-label>City</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter City"
+                    formControlName="city"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-4 my-3">
+                <mat-form-field class="w-100">
+                  <mat-label>Post Code</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter Post Code"
+                    formControlName="postCode"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-4 my-3">
+                <mat-form-field class="w-100">
+                  <mat-label>State</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter State"
+                    formControlName="state"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-4 my-3">
+                <mat-form-field class="w-100">
+                  <mat-label>Country</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter Country"
+                    formControlName="country"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-4 my-3">
+                <mat-form-field class="w-100">
+                  <mat-label>Contact No. 1</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter Contact No. 1"
+                    formControlName="contactNo1"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-4 my-3">
+                <mat-form-field class="w-100">
+                  <mat-label>Contact No. 2</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter Contact No. 2"
+                    formControlName="contactNo2"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-4 my-3">
+                <mat-form-field class="w-100">
+                  <mat-label>Currency</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter Currency"
+                    formControlName="currency"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-4 my-3">
+                <div class="form-group mb-2">
+                  <mat-form-field class="w-100">
+                    <mat-label>Exchange</mat-label>
+                    <mat-select formControlName="exchange_value">
+                      <mat-option
+                        *ngFor="let exchange of exchanges"
+                        [value]="exchange.value"
+                      >
+                        {{ exchange.viewValue }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 my-3">
+                <mat-form-field class="w-100">
+                  <mat-label>Billing Type</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter Billing Type"
+                    formControlName="billingType"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-4 my-3 pb-4">
+                <div class="w-100">
+                  <div class="mb-3"><mat-label>Status</mat-label></div>
+                  <mat-radio-group aria-label="Select an option" formControlName="status">
+                    <mat-radio-button value="1" checked class="mr-3"
+                      >Active</mat-radio-button
+                    >
+                    <mat-radio-button value="2">Inactive</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+            <div>
+              <mat-card-actions class="mb-2">
+                <button mat-raised-button matStepperNext color="primary">
+                  Next
+                </button>
+              </mat-card-actions>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Billing</ng-template>
+            <div class="row">
+              <div class="col-md-6 col-lg-4 mt-5 mb-3 pb-4">
+                <mat-checkbox (click)="use_address()"
+                  >Use Same Address</mat-checkbox
+                >
+              </div>
+              <div class="col-md-6 col-lg-4 my-3">
+                <mat-form-field class="w-100">
+                  <mat-label>Address Line 1</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter Address Line 1"
+                    formControlName="addressLine1"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-4 my-3">
+                <mat-form-field class="w-100">
+                  <mat-label>Address Line 2</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter Address Line 2"
+                    formControlName="addressLine2"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-4 my-3">
+                <mat-form-field class="w-100">
+                  <mat-label>City</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter City"
+                    formControlName="city"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-4 my-3">
+                <mat-form-field class="w-100">
+                  <mat-label>Post Code</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter Post Code"
+                    formControlName="postCode"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-4 my-3">
+                <mat-form-field class="w-100">
+                  <mat-label>State</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter State"
+                    formControlName="state"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-4 my-3">
+                <mat-form-field class="w-100">
+                  <mat-label>Country</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter Country"
+                    formControlName="country"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-4 my-3">
+                <mat-form-field class="w-100">
+                  <mat-label>Contact No. 1</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter Contact No. 1"
+                    formControlName="contactNo1"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-6 col-lg-4 my-3">
+                <mat-form-field class="w-100">
+                  <mat-label>Contact No. 2</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter Contact No. 2"
+                    formControlName="contactNo2"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+            <div>
+              <button mat-raised-button color="primary" matStepperPrevious>
+                Back
+              </button>
+
+              <button mat-raised-button color="primary" matStepperNext>
+                Next
+              </button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step>
+          <div class="text-center my-5">
+            <ng-template matStepLabel>Done</ng-template>
+            <p>You are now done.</p>
+            <div class="my-3">
+              <button mat-raised-button color="primary" matStepperPrevious>
+                Back
+              </button>
+              <button
+                mat-raised-button
+                color="primary"
+                (click)="add_customer()"
+              >
+                Done
+              </button>
+            </div>
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </div>
+  </div>
+</div>

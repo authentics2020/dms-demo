@@ -1,0 +1,100 @@
+<p>edituser works!</p>
+<div class="container-fluid">
+  <div class="row my-3">
+    <div class="col-6">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent">
+          <li class="breadcrumb-item"><a routerLink="/settings">Users</a></li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Create New User
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="col-6">
+      <div class="text-right"></div>
+    </div>
+  </div>
+
+  <form
+    (ngSubmit)="add_user()"
+    [formGroup]="addUserForm"
+    class="p-4 bg-white"
+    style="min-height: 80vh;"
+  >
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group mb-2">
+          <mat-form-field class="w-100">
+            <mat-label>Full Name</mat-label>
+            <input matInput placeholder="" formControlName="f_name" />
+          </mat-form-field>
+        </div>
+
+        <div class="form-group mb-2">
+          <mat-form-field class="w-100">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="" formControlName="email" />
+          </mat-form-field>
+        </div>
+
+        <div class="form-group mb-2">
+          <mat-form-field class="w-100">
+            <mat-label>User ID</mat-label>
+            <input matInput placeholder="" formControlName="user_id" />
+          </mat-form-field>
+        </div>
+
+        <div class="form-group mb-2">
+          <mat-form-field class="w-100">
+            <mat-label>Role</mat-label>
+            <mat-select formControlName="role_value">
+              <mat-option *ngFor="let role of roles" [value]="role.value">
+                {{ role.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group mb-2">
+          <mat-form-field class="w-100">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              placeholder=""
+              formControlName="password"
+              type="password"
+            />
+          </mat-form-field>
+        </div>
+
+        <div class="form-group mb-2">
+          <mat-form-field class="w-100">
+            <mat-label>Confirm Password</mat-label>
+            <input
+              matInput
+              placeholder=""
+              formControlName="confirm_password"
+              type="password"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="col-12 my-5 text-left">
+        <button
+          class="btn-primary btn-lg px-5 mr-3"
+          mat-button
+          (click)="openDialog()"
+        >
+          Add User
+        </button>
+
+        <!-- <button class="btn-primary btn-lg px-5">
+            Save
+          </button> -->
+      </div>
+    </div>
+  </form>
+</div>
