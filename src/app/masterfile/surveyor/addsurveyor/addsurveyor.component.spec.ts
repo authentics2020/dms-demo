@@ -8,9 +8,8 @@ describe('AddsurveyorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddsurveyorComponent ]
-    })
-    .compileComponents();
+      declarations: [AddsurveyorComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

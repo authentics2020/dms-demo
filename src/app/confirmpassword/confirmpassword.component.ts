@@ -38,11 +38,11 @@ export class ConfirmpasswordComponent implements OnInit {
       token: this.token,
     };
     this.api.change_password(input_data).subscribe(
-      (data : any) => {
+      (data: any) => {
         console.log(data);
         this.dialog.open(DialogDataExampleDialog, {
           data: {
-            message: data.message
+            message: data.message,
           },
         });
       },

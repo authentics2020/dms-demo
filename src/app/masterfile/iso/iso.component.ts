@@ -62,21 +62,21 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./iso.component.scss'],
 })
 export class IsoComponent implements OnInit {
-  token : any;
-  length : any = 2;
-  page : any = 1;
-  table_data : any = {};
+  token: any;
+  length: any = 2;
+  page: any = 1;
+  table_data: any = {};
   search = '';
   search_data = '';
   search_falg = false;
-  pages : any;
-  spinner : boolean = false;
-  constructor(private api : ApiService, private storage : StorageService) {}
+  pages: any;
+  spinner: boolean = false;
+  constructor(private api: ApiService, private storage: StorageService) {}
 
   ngOnInit(): void {
     this.spinner = true;
     this.token = this.storage.get_value('token');
-    this.get_iso_list('', false,this.page-1, '');
+    this.get_iso_list('', false, this.page - 1, '');
   }
 
   selected = 'option2';
@@ -102,7 +102,7 @@ export class IsoComponent implements OnInit {
     );
     // this.get_data("", false, this.page-1, '');
   }
-  get_iso_list(search: any, search_flag: any, page: any, search_data: any){
+  get_iso_list(search: any, search_flag: any, page: any, search_data: any) {
     search = search && search_data ? search : 'id';
     search_flag = search_data ? true : false;
     let input_data = {
@@ -129,21 +129,24 @@ export class IsoComponent implements OnInit {
       start: page * this.length,
     };
     console.log(input_data);
-    this.api.iso_list(input_data, this.token).subscribe((data)=>{
-      console.log(data);
-      this.table_data = data;
-      let round = Math.ceil(this.table_data.recordsFiltered / this.length);
+    this.api.iso_list(input_data, this.token).subscribe(
+      (data) => {
+        console.log(data);
+        this.table_data = data;
+        let round = Math.ceil(this.table_data.recordsFiltered / this.length);
         this.pages = [];
         for (let i = 1; i <= round; i++) {
           this.pages[i - 1] = i;
         }
         this.spinner = false;
-        if(this.pages.length <= 1){
+        if (this.pages.length <= 1) {
           this.pages = [];
         }
-    }, (err)=>{
-      console.log(err);
-    })
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 
   applyFilter(event: Event, column: any) {

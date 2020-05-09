@@ -8,9 +8,8 @@ describe('EortypeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EortypeComponent ]
-    })
-    .compileComponents();
+      declarations: [EortypeComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

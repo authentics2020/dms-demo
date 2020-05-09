@@ -5,7 +5,7 @@ import { ApiService } from '../../services/api.service';
 import { StorageService } from '../../services/storage.service';
 
 export interface PeriodicElement {
-  sno: number,
+  sno: number;
   customercode: string;
   customername: string;
   email: string;
@@ -17,7 +17,7 @@ export interface PeriodicElement {
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {
-    sno:1,
+    sno: 1,
     customercode: 'ABC123',
     customername: 'Sudheer',
     email: 'sudheer@test.com',
@@ -26,7 +26,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
     state: 'Telangana',
     status: 'Active',
   },
-  
 ];
 
 @Component({
@@ -63,7 +62,7 @@ export class CustomerlistComponent implements OnInit {
   search_data = '';
   search_falg = false;
   spinner: boolean = true;
-  length : any = 10;
+  length: any = 10;
   applyFilter(event: Event, column: any) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.spinner = true;

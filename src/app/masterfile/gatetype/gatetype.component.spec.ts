@@ -8,9 +8,8 @@ describe('GatetypeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GatetypeComponent ]
-    })
-    .compileComponents();
+      declarations: [GatetypeComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

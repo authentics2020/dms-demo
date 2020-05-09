@@ -5,117 +5,159 @@
     class="p-4 bg-white"
     style="min-height: 80vh;"
   >
-  <div class="row">
-    <div class="col-md-6 col-lg-4 my-3">
-      <mat-form-field class="w-100">
-        <mat-label>Haulier Code</mat-label>
-        <input matInput placeholder="Enter Haulier Code" formControlName="haulierCode" />
-      </mat-form-field>
-    </div>
+    <div class="row">
+      <div class="col-md-6 col-lg-4 my-3">
+        <mat-form-field class="w-100">
+          <mat-label>Haulier Code</mat-label>
+          <input
+            matInput
+            placeholder="Enter Haulier Code"
+            formControlName="haulierCode"
+          />
+        </mat-form-field>
+      </div>
 
-    <div class="col-md-6 col-lg-4 my-3">
-      <mat-form-field class="w-100">
-        <mat-label>Haulier Name</mat-label>
-        <input matInput placeholder="Enter Haulier Name" formControlName="haulierName" />
-      </mat-form-field>
-    </div>
+      <div class="col-md-6 col-lg-4 my-3">
+        <mat-form-field class="w-100">
+          <mat-label>Haulier Name</mat-label>
+          <input
+            matInput
+            placeholder="Enter Haulier Name"
+            formControlName="haulierName"
+          />
+        </mat-form-field>
+      </div>
 
-    <div class="col-md-6 col-lg-4 my-3">
-      <div class="w-100">
-        <div class="mb-3"><mat-label>DGC Billing Type</mat-label></div>
-        <mat-radio-group aria-label="Select an option" formControlName="dgcBillingType">
-          <mat-radio-button value="1" checked class="mr-3"
-            >Cash</mat-radio-button
+      <div class="col-md-6 col-lg-4 my-3">
+        <div class="w-100">
+          <div class="mb-3"><mat-label>DGC Billing Type</mat-label></div>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="dgcBillingType"
           >
-          <mat-radio-button value="2">Credit Card</mat-radio-button>
-        </mat-radio-group>
+            <mat-radio-button value="1" checked class="mr-3"
+              >Cash</mat-radio-button
+            >
+            <mat-radio-button value="2">Credit Card</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 my-3">
+        <mat-form-field class="w-100">
+          <mat-label>Credit Limit</mat-label>
+          <input
+            matInput
+            placeholder="Enter Credit Limit"
+            formControlName="creditLimit"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 col-lg-4 my-3">
+        <mat-form-field class="w-100">
+          <mat-label>Address Line 1</mat-label>
+          <input
+            matInput
+            placeholder="Enter Address Line 1"
+            formControlName="addressLine1"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 col-lg-4 my-3">
+        <mat-form-field class="w-100">
+          <mat-label>Address Line 2</mat-label>
+          <input
+            matInput
+            placeholder="Enter Address Line 2"
+            formControlName="addressLine2"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 col-lg-4 my-3">
+        <mat-form-field class="w-100">
+          <mat-label>City</mat-label>
+          <input matInput placeholder="Enter City" formControlName="city" />
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 col-lg-4 my-3">
+        <mat-form-field class="w-100">
+          <mat-label>Post Code</mat-label>
+          <input
+            matInput
+            placeholder="Enter Post Code"
+            formControlName="postCode"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 col-lg-4 my-3">
+        <mat-form-field class="w-100">
+          <mat-label>State</mat-label>
+          <input matInput placeholder="Enter State" formControlName="state" />
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 col-lg-4 my-3">
+        <mat-form-field class="w-100">
+          <mat-label>Country</mat-label>
+          <input
+            matInput
+            placeholder="Enter Country"
+            formControlName="country"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 col-lg-4 my-3">
+        <mat-form-field class="w-100">
+          <mat-label>Contact No. 1</mat-label>
+          <input
+            matInput
+            placeholder="Enter Contact No. 1"
+            formControlName="contactNumber1"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 col-lg-4 my-3">
+        <mat-form-field class="w-100">
+          <mat-label>Contact No. 2</mat-label>
+          <input
+            matInput
+            placeholder="Enter Contact No. 2"
+            formControlName="contactNumber2"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 col-lg-4 my-3 pb-4">
+        <div class="w-100">
+          <div class="mb-3"><mat-label>Status</mat-label></div>
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="status"
+          >
+            <mat-radio-button value="1" checked class="mr-3"
+              >Active</mat-radio-button
+            >
+            <mat-radio-button value="2">Inactive</mat-radio-button>
+          </mat-radio-group>
+        </div>
       </div>
     </div>
 
-    <div class="col-md-6 col-lg-4 my-3">
-      <mat-form-field class="w-100">
-        <mat-label>Credit Limit</mat-label>
-        <input matInput placeholder="Enter Credit Limit" formControlName="creditLimit" />
-      </mat-form-field>
-    </div>
-
-    <div class="col-md-6 col-lg-4 my-3">
-      <mat-form-field class="w-100">
-        <mat-label>Address Line 1</mat-label>
-        <input matInput placeholder="Enter Address Line 1" formControlName="addressLine1" />
-      </mat-form-field>
-    </div>
-
-    <div class="col-md-6 col-lg-4 my-3">
-      <mat-form-field class="w-100">
-        <mat-label>Address Line 2</mat-label>
-        <input matInput placeholder="Enter Address Line 2" formControlName="addressLine2" />
-      </mat-form-field>
-    </div>
-
-    <div class="col-md-6 col-lg-4 my-3">
-      <mat-form-field class="w-100">
-        <mat-label>City</mat-label>
-        <input matInput placeholder="Enter City" formControlName="city" />
-      </mat-form-field>
-    </div>
-
-    <div class="col-md-6 col-lg-4 my-3">
-      <mat-form-field class="w-100">
-        <mat-label>Post Code</mat-label>
-        <input matInput placeholder="Enter Post Code" formControlName="postCode" />
-      </mat-form-field>
-    </div>
-
-    <div class="col-md-6 col-lg-4 my-3">
-      <mat-form-field class="w-100">
-        <mat-label>State</mat-label>
-        <input matInput placeholder="Enter State" formControlName="state" />
-      </mat-form-field>
-    </div>
-
-    <div class="col-md-6 col-lg-4 my-3">
-      <mat-form-field class="w-100">
-        <mat-label>Country</mat-label>
-        <input matInput placeholder="Enter Country" formControlName="country" />
-      </mat-form-field>
-    </div>
-
-    <div class="col-md-6 col-lg-4 my-3">
-      <mat-form-field class="w-100">
-        <mat-label>Contact No. 1</mat-label>
-        <input matInput placeholder="Enter Contact No. 1" formControlName="contactNumber1" />
-      </mat-form-field>
-    </div>
-
-    <div class="col-md-6 col-lg-4 my-3">
-      <mat-form-field class="w-100">
-        <mat-label>Contact No. 2</mat-label>
-        <input matInput placeholder="Enter Contact No. 2" formControlName="contactNumber2" />
-      </mat-form-field>
-    </div>
-
-    <div class="col-md-6 col-lg-4 my-3 pb-4">
-      <div class="w-100">
-        <div class="mb-3"><mat-label>Status</mat-label></div>
-        <mat-radio-group aria-label="Select an option" formControlName="status">
-          <mat-radio-button value="1" checked class="mr-3"
-            >Active</mat-radio-button
-          >
-          <mat-radio-button value="2">Inactive</mat-radio-button>
-        </mat-radio-group>
+    <div class="row">
+      <div class="my-4 col-12">
+        <mat-card-actions class="mb-2">
+          <button mat-raised-button color="primary">
+            Save
+          </button>
+        </mat-card-actions>
       </div>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="my-4 col-12">
-      <mat-card-actions class="mb-2">
-        <button mat-raised-button color="primary">
-          Save
-        </button>
-      </mat-card-actions>
-    </div>
-  </div>
   </form>
 </div>

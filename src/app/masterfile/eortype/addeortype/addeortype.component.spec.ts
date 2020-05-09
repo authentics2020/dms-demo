@@ -8,9 +8,8 @@ describe('AddeortypeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddeortypeComponent ]
-    })
-    .compileComponents();
+      declarations: [AddeortypeComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

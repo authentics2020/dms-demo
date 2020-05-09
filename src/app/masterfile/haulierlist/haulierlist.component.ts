@@ -34,20 +34,20 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./haulierlist.component.scss'],
 })
 export class HaulierlistComponent implements OnInit {
-  token : any;
-  length : any = 10;
-  page : any = 1;
-  table_data : any = {};
+  token: any;
+  length: any = 10;
+  page: any = 1;
+  table_data: any = {};
   search = '';
   search_data = '';
   search_falg = false;
-  pages : any;
-  spinner : boolean = false;
-  constructor(private api : ApiService, private storage : StorageService) {}
+  pages: any;
+  spinner: boolean = false;
+  constructor(private api: ApiService, private storage: StorageService) {}
 
   ngOnInit(): void {
     this.token = this.storage.get_value('token');
-    this.get_list('', false, this.page-1, '');
+    this.get_list('', false, this.page - 1, '');
   }
 
   displayedColumns: string[] = [
@@ -60,7 +60,7 @@ export class HaulierlistComponent implements OnInit {
   ];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
-  applyFilter(event: Event, column : any) {
+  applyFilter(event: Event, column: any) {
     this.spinner = true;
     const filterValue = (event.target as HTMLInputElement).value;
     // this.spinner = true;
@@ -86,7 +86,7 @@ export class HaulierlistComponent implements OnInit {
     // this.get_data("", false, this.page-1, '');
   }
 
-  get_list(search: any, search_flag: any, page: any, search_data: any){
+  get_list(search: any, search_flag: any, page: any, search_data: any) {
     search = search && search_data ? search : 'id';
     search_flag = search_data ? true : false;
     let input_data = {
@@ -113,25 +113,23 @@ export class HaulierlistComponent implements OnInit {
       start: page * this.length,
     };
     console.log(input_data);
-    this.api.haulier_list(input_data, this.token).subscribe((data)=>{
-      console.log(data);
-      this.table_data = data;
-      let round = Math.ceil(this.table_data.recordsFiltered / this.length);
+    this.api.haulier_list(input_data, this.token).subscribe(
+      (data) => {
+        console.log(data);
+        this.table_data = data;
+        let round = Math.ceil(this.table_data.recordsFiltered / this.length);
         this.pages = [];
         for (let i = 1; i <= round; i++) {
           this.pages[i - 1] = i;
         }
         this.spinner = false;
-        if(this.pages.length <= 1){
+        if (this.pages.length <= 1) {
           this.pages = [];
         }
-    }, (err)=>{
-      console.log(err);
-    })
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
-
-
- 
-
-  
 }

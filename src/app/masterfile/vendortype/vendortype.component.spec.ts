@@ -8,9 +8,8 @@ describe('VendortypeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VendortypeComponent ]
-    })
-    .compileComponents();
+      declarations: [VendortypeComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

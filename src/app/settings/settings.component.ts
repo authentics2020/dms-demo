@@ -31,7 +31,7 @@ export class SettingsComponent implements OnInit {
   search_data = '';
   search_falg = false;
   spinner: boolean = true;
-  length : any = 10;
+  length: any = 10;
   applyFilter(event: Event, column: any) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.spinner = true;

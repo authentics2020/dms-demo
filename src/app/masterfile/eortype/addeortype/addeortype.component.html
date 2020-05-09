@@ -1,36 +1,39 @@
 <div class="container-fluid bg-white my-3">
-    <div class="row">
-        <div class="col-md-6 col-lg-4 my-3">
-            <mat-form-field class="w-100">
-            <mat-label>Code</mat-label>
-            <input matInput placeholder="Enter Code" required>
-            </mat-form-field>
-        </div>
-
-        <div class="col-md-6 col-lg-4 my-3">
-            <mat-form-field class="w-100">
-            <mat-label>Description</mat-label>
-            <input matInput placeholder="Enter Description" required>
-            </mat-form-field>
-        </div>
-
-        <div class="col-md-6 col-lg-4 my-3 pb-4">
-            <div class="w-100">
-                <div class="mb-3"><mat-label>Status</mat-label></div>
-                <mat-radio-group aria-label="Select an option">
-                    <mat-radio-button value="1" checked class="mr-3">Active</mat-radio-button>
-                    <mat-radio-button value="2">Inactive</mat-radio-button>
-                </mat-radio-group>
-            </div>
-        </div>
-
+  <div class="row">
+    <div class="col-md-6 col-lg-4 my-3">
+      <mat-form-field class="w-100">
+        <mat-label>Code</mat-label>
+        <input matInput placeholder="Enter Code" required />
+      </mat-form-field>
     </div>
 
-    <div class="row">
-        <div class="my-4 col-12">
-            <mat-card-actions class="mb-2">
-              <button mat-raised-button color="primary" routerLink="/eortype">Save</button>
-          </mat-card-actions>
-        </div>
+    <div class="col-md-6 col-lg-4 my-3">
+      <mat-form-field class="w-100">
+        <mat-label>Description</mat-label>
+        <input matInput placeholder="Enter Description" required />
+      </mat-form-field>
     </div>
+
+    <div class="col-md-6 col-lg-4 my-3 pb-4">
+      <div class="w-100">
+        <div class="mb-3"><mat-label>Status</mat-label></div>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1" checked class="mr-3"
+            >Active</mat-radio-button
+          >
+          <mat-radio-button value="2">Inactive</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="my-4 col-12">
+      <mat-card-actions class="mb-2">
+        <button mat-raised-button color="primary" routerLink="/eortype">
+          Save
+        </button>
+      </mat-card-actions>
+    </div>
+  </div>
 </div>

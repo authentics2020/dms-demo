@@ -8,9 +8,8 @@ describe('AddforkliftjobtypeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddforkliftjobtypeComponent ]
-    })
-    .compileComponents();
+      declarations: [AddforkliftjobtypeComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

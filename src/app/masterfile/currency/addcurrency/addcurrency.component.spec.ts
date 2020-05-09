@@ -8,9 +8,8 @@ describe('AddcurrencyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddcurrencyComponent ]
-    })
-    .compileComponents();
+      declarations: [AddcurrencyComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

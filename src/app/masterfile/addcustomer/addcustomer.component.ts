@@ -39,7 +39,7 @@ export class AddcustomerComponent implements OnInit {
     private _formBuilder: FormBuilder,
     private api: ApiService,
     private storage: StorageService,
-    private dialog : MatDialog
+    private dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -112,7 +112,7 @@ export class AddcustomerComponent implements OnInit {
     };
     console.log(input_data);
     this.api.save_ustomer(input_data, this.token).subscribe(
-      (data : any) => {
+      (data: any) => {
         console.log(data);
         this.dialog.open(DialogDataExampleDialog, {
           data: {
@@ -164,7 +164,6 @@ export class AddcustomerComponent implements OnInit {
     console.log(this.secondFormGroup.value);
   }
 }
-
 
 @Component({
   selector: 'dialog-data-example-dialog',

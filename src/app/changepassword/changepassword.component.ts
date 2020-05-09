@@ -12,7 +12,11 @@ export interface DialogData {
 })
 export class ChangepasswordComponent implements OnInit {
   forgotForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private api: ApiService, public dialog: MatDialog) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private api: ApiService,
+    public dialog: MatDialog
+  ) {
     this.createForm();
   }
 
@@ -24,11 +28,11 @@ export class ChangepasswordComponent implements OnInit {
       username: this.forgotForm.value.email,
     };
     this.api.forgot(input_data).subscribe(
-      (data : any) => {
+      (data: any) => {
         console.log(data);
         this.dialog.open(DialogDataExampleDialog, {
           data: {
-            message: data.message
+            message: data.message,
           },
         });
       },
@@ -44,8 +48,6 @@ export class ChangepasswordComponent implements OnInit {
     });
   }
 }
-
-
 
 @Component({
   selector: 'dialog-data-example-dialog',

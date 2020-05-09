@@ -13,10 +13,15 @@ export interface DialogData {
   styleUrls: ['./addhaulier.component.scss'],
 })
 export class AddhaulierComponent implements OnInit {
-  haulier_form : FormGroup;
-  token : any;
-  
-  constructor(private api : ApiService, private storage : StorageService, private form_builder : FormBuilder, private dialog : MatDialog) {
+  haulier_form: FormGroup;
+  token: any;
+
+  constructor(
+    private api: ApiService,
+    private storage: StorageService,
+    private form_builder: FormBuilder,
+    private dialog: MatDialog
+  ) {
     this.form_creation();
   }
 
@@ -24,37 +29,40 @@ export class AddhaulierComponent implements OnInit {
     this.token = this.storage.get_value('token');
   }
 
-  save_haulier_list(){
+  save_haulier_list() {
     console.log(this.haulier_form.value);
     let input_data = {
-      "addressLine1": this.haulier_form.value.addressLine1,
-      "addressLine2": this.haulier_form.value.addressLine2,
-      "city": this.haulier_form.value.city,
-      "contactNumber1": this.haulier_form.value.contactNumber1,
-      "contactNumber2": this.haulier_form.value.contactNumber2,
-      "country": this.haulier_form.value.country,
-      "creditLimit": this.haulier_form.value.creditLimit,
-      "dgcBillingType": this.haulier_form.value.dgcBillingType,
-      "haulierCode": this.haulier_form.value.haulierCode,
-      "haulierName": this.haulier_form.value.haulierName,
-      "postCode": this.haulier_form.value.postCode,
-      "state": this.haulier_form.value.state,
-      "status": this.haulier_form.value.status == 1 ? "ACTIVE" : "INACTIVE"
-    }
+      addressLine1: this.haulier_form.value.addressLine1,
+      addressLine2: this.haulier_form.value.addressLine2,
+      city: this.haulier_form.value.city,
+      contactNumber1: this.haulier_form.value.contactNumber1,
+      contactNumber2: this.haulier_form.value.contactNumber2,
+      country: this.haulier_form.value.country,
+      creditLimit: this.haulier_form.value.creditLimit,
+      dgcBillingType: this.haulier_form.value.dgcBillingType,
+      haulierCode: this.haulier_form.value.haulierCode,
+      haulierName: this.haulier_form.value.haulierName,
+      postCode: this.haulier_form.value.postCode,
+      state: this.haulier_form.value.state,
+      status: this.haulier_form.value.status == 1 ? 'ACTIVE' : 'INACTIVE',
+    };
     console.log(input_data);
-    this.api.save_haulier(input_data, this.token).subscribe((data : any)=>{
-      console.log(data);
-      this.dialog.open(DialogDataExampleDialog, {
-        data: {
-          message: data.message,
-        },
-      });
-    }, (err)=>{
-      console.log(err);
-    })
+    this.api.save_haulier(input_data, this.token).subscribe(
+      (data: any) => {
+        console.log(data);
+        this.dialog.open(DialogDataExampleDialog, {
+          data: {
+            message: data.message,
+          },
+        });
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 
-  form_creation(){
+  form_creation() {
     this.haulier_form = this.form_builder.group({
       addressLine1: ['', Validators.required],
       addressLine2: ['', Validators.required],
@@ -72,7 +80,6 @@ export class AddhaulierComponent implements OnInit {
     });
   }
 }
-
 
 @Component({
   selector: 'dialog-data-example-dialog',

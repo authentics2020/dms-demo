@@ -62,7 +62,7 @@ export class ApiService {
     return this.http.post(API_URL + 'customers_list', data, options);
   }
 
-  save_iso(data : any, token : any){
+  save_iso(data: any, token: any) {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + token,
@@ -72,7 +72,7 @@ export class ApiService {
     return this.http.post(API_URL + 'save_iso', data, options);
   }
 
-  iso_list(data : any, token : any){
+  iso_list(data: any, token: any) {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + token,
@@ -82,7 +82,7 @@ export class ApiService {
     return this.http.post(API_URL + 'iso_list', data, options);
   }
 
-  save_haulier(data : any, token : any){
+  save_haulier(data: any, token: any) {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + token,
@@ -91,7 +91,7 @@ export class ApiService {
     return this.http.post(API_URL + 'save_haulier', data, options);
   }
 
-  haulier_list(data : any, token : any){
+  haulier_list(data: any, token: any) {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + token,
